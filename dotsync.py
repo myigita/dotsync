@@ -21,7 +21,9 @@ def save_file_location(): # saves provided file location to a file
             file.write(location + "\n")
     return 0
 
-def copy_files():
+def copy_files(): 
+    # TODO Put the files inside a folder with given name (e.g. dotsync -add ~/.bashrc bash_config creates a bash_config folder inside dotfiles folder and puts
+    # .bashrc file there) so there is no conflict
     if os.path.getsize(file_list) == 0:
         print(f"You must add at least one file before syncing.")
         return 1
@@ -66,7 +68,8 @@ def main():
         elif argv[0] in ("-h", "-help", "--h", "--help"):
             help()
         else:
-            help()
+            copy_files()
+            upload_files()
     else:
         copy_files()
         upload_files()

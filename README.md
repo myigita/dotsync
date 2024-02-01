@@ -10,6 +10,7 @@
 - First you must add a dotfile to be synced using: "python3 dotsync.py -add ~/example_folder/example_file.file"
 - Then you can run "python3 dotsync.py" to automatically copy the file and push it to your repo
 - You can also use "python3 dotsync.py -help" for help
+- **IMPORTANT: You have to be in the directory where dotsync.py and other files are located to use it!**
 
 ## TODO
 - Ability to automatically install your dotfiles after downloading them
