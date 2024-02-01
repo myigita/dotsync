@@ -18,7 +18,7 @@ def run_command(command):
 
 def install():
     repo = input("Please input the repo address\n(Example: 'git@github.com:<name>/<repo>.git' or 'https://github.com/<user>/<repo>.git'):")
-    run_command("git init " + repo)
+    run_command("git init")
     run_command("git remote add origin " + repo)
     run_command("git pull origin main")
 
