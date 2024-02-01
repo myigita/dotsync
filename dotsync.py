@@ -14,9 +14,6 @@ saved_files_directory = "./dotfiles"
 file_list = "./files_dotsync"
 verbose = 0 
 
-# read file locations from file and write if opened in write mode
-# TODO write a install script
-
 def save_file_location(): # saves provided file location to a file
     argv_locations = argv[1:]
     with open(file_list, "a") as file:
@@ -66,7 +63,8 @@ def main():
     if argc > 0:
         if argv[0] in ("-a","-add", "--a", "--add"):
             save_file_location()
-        # elif argv[0] in ("-h", "-help", "--h", "--help"):
+        elif argv[0] in ("-h", "-help", "--h", "--help"):
+            help()
         else:
             help()
     else:

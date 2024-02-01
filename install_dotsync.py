@@ -17,15 +17,13 @@ def run_command(command):
         print(f"Error info: {e.stderr}")
 
 def install():
-    # repo = input("Please input the repo address\n(Example: 'git@github.com:<name>/<repo>.git' or 'https://github.com/<user>/<repo>.git'):")
-    repo = "git@github.com:myigita/dotfiles.git"
+    repo = input("Please input the repo address\n(Example: 'git@github.com:<name>/<repo>.git' or 'https://github.com/<user>/<repo>.git'):")
     run_command("git init " + repo)
     run_command("git remote add origin " + repo)
     run_command("git pull origin main")
 
 def create():
-    # repo = input("Please input the repo address\n(Example: 'git@github.com:<name>/<repo>.git' or 'https://github.com/<user>/<repo>.git'):")
-    repo = "git@github.com:myigita/dotfiles.git"
+    repo = input("Please input the repo address\n(Example: 'git@github.com:<name>/<repo>.git' or 'https://github.com/<user>/<repo>.git'):")
     run_command("touch files_dotsync")
     run_command("touch README.md")
     run_command("echo Created by Dotsync > README.md")
@@ -33,12 +31,9 @@ def create():
     run_command("touch "+ saved_files_directory + "/.gitkeep")
     run_command("git init")
     run_command("git remote add origin " + repo)
-    # run_command("git pull origin main")
     run_command("git add " + file_list)
     run_command("git add " + saved_files_directory)
     run_command('git commit -m "dotsync install commit"')
-    # run_command("git branch --set-upstream-to=origin/main main")  # Set up tracking information
-    # run_command("git merge origin/main")
     run_command("git push -u origin main")
 
 
